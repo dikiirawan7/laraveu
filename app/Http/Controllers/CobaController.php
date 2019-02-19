@@ -15,4 +15,10 @@ class CobaController extends Controller
         echo "tes";
         echo "oke";
     }
+    public function salah(){
+        echo "tes";
+        echo "oke";
+        echo "tes";
+        echo "oke";
+    }
 }

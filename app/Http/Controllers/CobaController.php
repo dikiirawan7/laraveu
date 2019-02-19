@@ -24,5 +24,6 @@ class CobaController extends Controller
     public function cobalah(){
         //
         //
+        //
     }
 }

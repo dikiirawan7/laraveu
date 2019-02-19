@@ -25,5 +25,9 @@ class CobaController extends Controller
         //
         //
         //
+        //
+    }
+    public function percobaan(){
+        //isinya beda khusus git
     }
 }

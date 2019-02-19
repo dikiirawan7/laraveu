@@ -22,6 +22,6 @@ class CobaController extends Controller
         echo "oke";
     }
     public function cobalah(){
-        
+        //
     }
 }

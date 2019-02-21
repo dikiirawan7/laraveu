@@ -11,6 +11,9 @@
             <li class="nav-item">
             <router-link to="/post" class="nav-link" >Post</router-link>
             </li>
+            <li class="nav-item">
+            <router-link to="/indexpaging" class="nav-link" >indexpaging</router-link>
+            </li>
         </ul>
 
     </nav>

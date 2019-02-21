@@ -24,6 +24,10 @@ class PostController extends Controller
       return new PostCollection(Post::all());
       
     }
+    public function paging(){
+        return new PostCollection(Post::paginate(5));
+        
+    }
     public function edit($id){
         $post  =   Post::find($id);
         return response()->json($post);

@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/coba','CobaController@index');
+Route::get('/paging','PostController@paging');
 Route::get('/tes/{any}','PostController@update');
 
 //Route::get('/tes','PostController@index');

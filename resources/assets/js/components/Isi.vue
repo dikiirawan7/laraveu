@@ -20,24 +20,53 @@
             </div>
             <br>
             <div class="form-group">
-                <button class="btn btn-primary">Create</button>
+                <button class="btn btn-primary" >Create</button>
             </div>
         </form>
     </div>
 </template>
 <script>
+// import '../../../../node_modules/jquery/dist/jquery.min.js';
     export default{
        data(){
            return{
                post:{}
            }
-       },
+       }
+       //membuat validasi dengan jquery
+        //mounted(){
+        //    $('#tambah').on('click',function(){
+        //  var judul = $('#title').val();
+        //  if(judul==''){
+        //      alert('isi Judul Terlebih dahulu');
+        //      }
+//
+        //  });
+       //}
+       ,
        methods:{
            addPost(){
+               var judul= this.post.title;
+               var body= this.post.body;
+               if(!judul){
+               alert("nama tidak boleh kosong");
+               }
+               else if(!body){
+                alert("Body tidak boleh kosong");
+               }
+               else{
+               
                let uri='http://localhost:8000/api/post/create';
                this.axios.post(uri,this.post).then((response)=>{
-                   this.$router.push({name:'posts'});
+                   alert("sip");
+                   this.$router.push({name:'posts'});//untuk reload location
+               }).then(response=>{
+
                });
+               
+               ;
+
+               }
            }
        }
     }

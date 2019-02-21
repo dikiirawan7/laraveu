@@ -8,7 +8,7 @@ import VueRouter from 'vue-router';
 import NProgress from 'nprogress';
 Vue.use(VueRouter);
 Vue.use(NProgress);
-
+//window.nama yang diimpor.default agar fungsinya
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 
@@ -31,7 +31,7 @@ Vue.config.productionTip = false
 
 const routes = [
     {
-        name:'index',
+        name:'posts',
         path:'/latihan',
         component:IndexConponent
     },
@@ -41,7 +41,7 @@ const routes = [
         component:HomeComponent
     },
     {
-        name:'isi',
+        name:'create',
         path:'/create',
         component:Isi
     },

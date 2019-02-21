@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/coba','CobaController@index');
+Route::get('/tes/{any}','PostController@update');
+
+//Route::get('/tes','PostController@index');
+//Route::get('/tes/{any}','PostController@tes');
 Route::get('/{any}',function(){
     return view('latihan');
 })->where('any', '.*');

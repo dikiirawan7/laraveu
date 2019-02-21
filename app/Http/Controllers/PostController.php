@@ -22,6 +22,28 @@ class PostController extends Controller
     public function index()
     {
       return new PostCollection(Post::all());
+      
     }
+    public function edit($id){
+        $post  =   Post::find($id);
+        return response()->json($post);
+    }
+
+    public function update($id,Request $request){
+        $post = Post::find($id);
+        $post->update($request->all());
+        return response()->json('Update Sukses');
+    }
+
+    public function delete($id){
+        $post = Post::find($id);
+        $post->delete();
+        return response()->json('sukses menghapus');
+    }
+   /* public function tes($oke){
+        $semua= new PostCollection(Post::where('id','=',$oke)->get());
+      dd($semua);
+    }
+    */
     
 }

@@ -6,7 +6,15 @@ window.Vue = require('vue');
 
 import VueRouter from 'vue-router';
 import NProgress from 'nprogress';
-Vue.use(VueRouter);
+import VueSweetalert2 from 'vue-sweetalert2';
+
+const options = {
+    confirmButtonColor: '#41b882',
+    cancelButtonColor: '#ff7674'
+  }
+   
+  Vue.use(VueSweetalert2, options);
+  Vue.use(VueRouter);
 Vue.use(NProgress);
 //window.nama yang diimpor.default agar fungsinya
 import VueAxios from 'vue-axios';

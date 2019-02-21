@@ -27,7 +27,7 @@
                         <td v-on:click="gb(oke) ">{{post.title}}</td>
                         <td v-on:click="gb(oke) ">{{post.body}}</td>
                         <td><router-link :to="{name:'edit',params:{id:post.id}}" class="btn btn-primary">Edit</router-link>
-                        <button @click.prevent="deletePost(post.id)" class="btn btn-danger">Delete</button></td>
+                        <button @click.prevent="deletePost(post.id,oke)" class="btn btn-danger">Delete</button></td>
                     </tr>
                     <tr v-show="post.tampil">
                         <td colspan="4">
@@ -94,15 +94,35 @@ export default {
 
                
            },
-           deletePost(id){
+           deletePost(id,oke){
                let uri = `http://localhost:8000/api/post/delete/${id}`;
+               this.$swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        this.axios.delete(uri).then(response=>{
+                                NProgress.start();
+                            //ini untuk menghapus data di front end   this.posts.splice(oke,1);
+                            this.$swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                                ).then(response=>{
+                                   this.$delete(this.posts, oke);
+                                    });
+
+                            }).then(response => { 
+                                NProgress.done();
+                                });
+                        }
+                    })
                
-               this.axios.delete(uri).then(response=>{
-                    NProgress.start();
-                   this.posts.splice(this.posts.indexOf(id),1);
-               }).then(response => {
-                   NProgress.done();
-                });
            }
         },
         created(){

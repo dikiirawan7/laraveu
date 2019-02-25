@@ -31,6 +31,7 @@ import IndexConponent from './components/IndexComponent.vue';
 import EditComponent from './components/EditComponent.vue';
 import Isi from './components/Isi.vue';
 import Indexpaging from './components/Indexpaging.vue';
+import Caripaging from './components/Caripaging.vue';
 
 import '../../../node_modules/nprogress/nprogress.css';
 import '../../../node_modules/jquery/dist/jquery.min.js';
@@ -63,6 +64,11 @@ const routes = [
         name:'paging',
         path:'/indexpaging',
         component:Indexpaging
+    },
+    {
+        name:'caripaging',
+        path:'/caripaging',
+        component:Caripaging
     }    
 ];
 

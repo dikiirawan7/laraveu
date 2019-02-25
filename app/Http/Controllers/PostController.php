@@ -28,6 +28,15 @@ class PostController extends Controller
         return new PostCollection(Post::paginate(5));
         
     }
+    public function cari($title=''){
+        if($title==''){
+            $cari='';
+        }
+        else{
+            $cari=$title;
+        }
+        return new PostCollection(Post::where('title','like','%'.$cari.'%')->orderBy('id','desc')->paginate(5));
+    }
     public function edit($id){
         $post  =   Post::find($id);
         return response()->json($post);

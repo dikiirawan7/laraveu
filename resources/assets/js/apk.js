@@ -17,10 +17,6 @@ const options = {
   Vue.use(VueRouter);
 Vue.use(NProgress);
 //window.nama yang diimpor.default agar fungsinya
-import VueAxios from 'vue-axios';
-import axios from 'axios';
-
-Vue.use(VueAxios, axios);
 
 
 

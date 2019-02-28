@@ -106,7 +106,7 @@ export default {
                 confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        this.axios.delete(uri).then(response=>{
+                        axios.delete(uri).then(response=>{
                                 NProgress.start();
                             //ini untuk menghapus data di front end   this.posts.splice(oke,1);
                             this.$swal.fire(
@@ -126,8 +126,9 @@ export default {
            }
         },
         created(){
+
             let uri="http://localhost:8000/api/posts";
-            this.axios.get(uri).then(response=>{
+            axios.get(uri).then(response=>{
                 this.posts = response.data.data;
                 
                 

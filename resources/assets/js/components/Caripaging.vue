@@ -107,7 +107,7 @@ export default {
             }
         },
         mounted(){
-            this.fetchUsers();
+           
             this.okelah();
             
 
@@ -178,7 +178,7 @@ export default {
                 confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.value) {
-                        this.axios.delete(uri).then(response=>{
+                        axios.delete(uri).then(response=>{
                                 NProgress.start();
                             //ini untuk menghapus data di front end   this.posts.splice(oke,1);
                             this.$swal.fire(

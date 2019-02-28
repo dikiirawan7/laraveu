@@ -21,6 +21,7 @@ class PostController extends Controller
 
     public function index()
     {
+        
       return new PostCollection(Post::all());
       
     }

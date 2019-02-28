@@ -32,19 +32,8 @@
            return{
                post:{}
            }
-       }
-       //membuat validasi dengan jquery
-        //mounted(){
-        //    $('#tambah').on('click',function(){
-        //  var judul = $('#title').val();
-        //  if(judul==''){
-        //      alert('isi Judul Terlebih dahulu');
-        //      }
-//
-        //  });
-       //}
-       ,
-       methods:{
+       },
+        methods:{
            addPost(){
                var judul= this.post.title;
                var body= this.post.body;
@@ -65,7 +54,7 @@
                else{
                
                let uri='http://localhost:8000/api/post/create';
-               this.axios.post(uri,this.post).then((response)=>{
+               axios.post(uri,this.post).then((response)=>{
                    
                    this.$swal.fire(
                     'Artikel Tersimpan!',
@@ -85,6 +74,20 @@
                }
            }
        }
+
+
+       //membuat validasi dengan jquery
+        //mounted(){
+        //    $('#tambah').on('click',function(){
+        //  var judul = $('#title').val();
+        //  if(judul==''){
+        //      alert('isi Judul Terlebih dahulu');
+        //      }
+//
+        //  });
+       //}
+       
+       
     }
 
 </script>

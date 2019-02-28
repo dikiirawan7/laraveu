@@ -34,7 +34,7 @@ export default {
     },
     created(){
         let uri =   `http://localhost:8000/api/post/edit/${this.$route.params.id}`;
-        this.axios.get(uri).then((response)=>{
+        axios.get(uri).then((response)=>{
             this.post   =   response.data;
         });
     },
@@ -42,7 +42,7 @@ export default {
         updatePost(){
             let uri =   `http://localhost:8000/api/post/update/${this.$route.params.id}`;
            
-            this.axios.post(uri,this.post).then((response)=>{
+            axios.post(uri,this.post).then((response)=>{
                    this.$router.push({name:'posts'});//untuk reload location
             });
         }
